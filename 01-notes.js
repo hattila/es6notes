@@ -8,3 +8,6 @@ const person = {
 person = 'asd'; // error
 
 person.age = 29; // ok
+
+// this creates a "frozen" version of the object, no proprty can be modified onwards.
+const attile = Object.freeze(person);
