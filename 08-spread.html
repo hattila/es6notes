@@ -52,6 +52,55 @@
 	const newComments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex+1)];
 	console.log(newComments);
 
+	//
+	// spread into a function
+	//
+
+	const inventors = ['Einstein', 'Newton', 'Galileo'];
+	const newInventors = ['Musk', 'Jobs'];
+
+	// previously
+	// inventors.push.apply(inventors, newInventors);
+	// console.log(inventors);
+
+	inventors.push(...newInventors); // it is equivalent to .push('Musk', 'Jobs')
+    console.log(inventors);
+
+
+    const name = ['A', 'B'];
+
+    function sayHi(first, last) {
+        console.log(`Hey there ${first} ${last}`);
+	}
+
+	// sayHi(name[0], name[1]);
+	sayHi(...name);
+
+
+    //
+	// REST ...
+	// works as the opposite of a spread, takes multiple things and packs them into an array.
+	//
+
+	function convertCurrency(rate, ...amounts) {
+	    // console.log(rate);
+	    // console.table(amounts); // don't forget this, it's cool
+
+		return amounts.map(amount => amount * rate);
+	}
+
+	const convertedCurrencies = convertCurrency(1.54, 10, 23, 52, 1, 56);
+	console.log(convertedCurrencies);
+
+	// destructuring example
+	const runner = ['Firstname Surname', 123, 5.5, 3, 6, 35];
+	const [runnerName, runnerId, ...runs] = runner;
+	console.log(runnerName, runnerId, runs);
+
+	const team = ['One', 'Tow', 'Rest', 'Of', 'The', 'Team'];
+	const [captian, assistant, ...players] = team;
+    console.log(captian, assistant, players);
+
 </script>
 </body>
 </html>
