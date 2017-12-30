@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>spread</title>
+</head>
+<body>
+<script>
+    const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+    const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+    // const pizzas = features.concat(specialty);
+
+	// spread takes all the items, in an iterable, and created an array of them
+	// so with spread we can concat the two arrays, and insert a new element 'veg'
+	// without doing multiple concats
+	const pizzas = [...featured, 'veg', ...specialty];
+
+	//
+	// copy an array
+	//
+
+	// this only creates a reference
+	// const fridayPizzas = pizzas;
+
+	// this makes a new array
+	// const fridayPizzas = [].concat(pizzas);
+
+	// with spread
+	const fridayPizzas = [...pizzas]; // takes all elements and creates a new array
+
+    const deepDish = {
+        pizzaName: 'Deep Dish',
+        size: 'Medium',
+        ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+    };
+
+</script>
+</body>
+</html>
