@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iterables, for of</title>
+</head>
+<body>
+<script>
+
+	// for in, returns all properties of an object, so it's not the best
+	// for an array, which has eg custom methods, props on it's prototype
+
+	const fruits = [
+	    'apple',
+	    'pear',
+	    'melon'
+	];
+
+	console.log(fruits); // Array
+
+	Array.prototype.randomMethod = function() {
+        console.log('A random array method');
+    };
+
+	for (const index in fruits) {
+	    console.log(fruits[index]); // logs out the custom method as well
+	}
+
+	// the new for of, does what we need regularly, loops only on values, break and
+	// continue can be used with it
+
+	for (const fruit of fruits) {
+	    if (fruit === 'pear') {
+	        // break;
+	        // continue;
+		}
+
+        console.log(fruit); // logs out only the values
+    }
+
+    //
+	// objects
+	//
+
+	const apple = {
+	    color: 'Red',
+		size: 'Medium',
+		weight: 50,
+		sugar: 10
+	};
+
+    // returns keys as an array
+	const keys = Object.keys(apple);
+
+	console.log(keys);
+
+	// Object.entries // coming in ES 2017
+
+	// simple objects can be iterated with for in
+	for (const prop in apple) {
+	    console.log(prop, apple[prop]);
+	}
+
+
+</script>
+</body>
+</html>
