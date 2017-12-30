@@ -35,6 +35,23 @@
         ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
     };
 
+    const shoppingList = ['Milk', 'Fluor', ...deepDish.ingredients]; // spread makes a true copy!
+	console.log(shoppingList);
+
+	const comments = [
+		{id: 12345, text: 'asdagkdlgdg'},
+		{id: 12346, text: 'asdagkdlgdg'},
+		{id: 12347, text: 'i want to remove dis'},
+		{id: 12348, text: 'asdagkdlgdg'},
+	];
+
+	const id = 12347;
+	const commentIndex = comments.findIndex(comment => comment.id === id);
+	// console.log(commentIndex);
+
+	const newComments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex+1)];
+	console.log(newComments);
+
 </script>
 </body>
 </html>
